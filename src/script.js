@@ -188,7 +188,7 @@ export default {
         units: this.units,
         language: this.language,
       }).then((data) => {
-        this.$set(this, "weather", data);
+        this.weather = data
       });
     },
 
@@ -202,18 +202,18 @@ export default {
     },
 
     hydrate(setLoading = true) {
-      this.$set(this, "loading", setLoading);
+      this.loading = setLoading
       return this.$nextTick()
         .then(this.processLocation)
         .then(this.loadWeather)
         .then(() => {
-          this.$set(this, "error", null);
+          this.error = null
         })
         .catch((err) => {
-          this.$set(this, "error", "" + err);
+          this.error = "" + err
         })
         .finally(() => {
-          this.$set(this, "loading", false);
+          this.loading = false
           this.autoupdate();
         });
     },
