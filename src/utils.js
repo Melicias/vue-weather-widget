@@ -137,7 +137,7 @@ const utils = {
       `https://api.openweathermap.org/data/2.5/onecall?appid=${opts.apiKey}` +
         `&lat=${opts.lat}` +
         `&lon=${opts.lng}` +
-        `&units=${units}` +
+        `&units=${opts.units}` +
         `&lang=${opts.language}`
     )
       .then((resp) => resp.json())
