@@ -81,11 +81,11 @@ export default {
       default: "#333",
     },
 
-    // // Your positionstack api key for geocoding
-    // positionstackApi: {
-    //   type: String,
-    //   default: "7f9c71310f410847fceb9537a83f3882",
-    // },
+    // Your positionstack api key for geocoding
+      positionstackApi: {
+      type: String,
+      default: "7f9c71310f410847fceb9537a83f3882",
+    },
 
     // Your ipregistry key to get location from ip address
     ipregistryKey: {
@@ -99,7 +99,7 @@ export default {
       loading: true,
       weather: null,
       error: null,
-      //location: {},
+      location: {},
       timeout: null,
     };
   },
@@ -239,15 +239,14 @@ export default {
         //   });
         // }
       } else {
-        // return Utils.reverseGeocode(this.positionstackApi, this.latitude, this.longitude).then(
-        //   (data) => {
-        //     this.$set(this, "location", {
-        //       lat: this.latitude,
-        //       lng: this.longitude,
-        //       name: `${data.region}, ${data.country}`,
-        //     });
-        //   }
-        // );
+        return Utils.reverseGeocode(this.positionstackApi, this.latitude, this.longitude).then(
+          (data) => {
+            this.location = {
+              lat: this.latitude,
+              lng: this.longitude,
+              name: data.region + " " + data.country
+            }
+           })
       }
     },
   },

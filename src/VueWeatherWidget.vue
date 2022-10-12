@@ -3,7 +3,7 @@
     <slot name="header">
       <div class="vww__header" :style="{ borderColor: barColor }" v-if="!hideHeader">
         <span class="vww__title">
-          <slot name="title">Weather</slot>
+          <slot name="title">Weather</slot><slot v-if="location" name="title2"> in {{location.name}}</slot>
         </span>
       </div>
     </slot>
