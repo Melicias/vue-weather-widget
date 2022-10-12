@@ -82,7 +82,7 @@ export default {
     },
 
     // Your positionstack api key for geocoding
-      positionstackApi: {
+    positionstackApi: {
       type: String,
       default: "7f9c71310f410847fceb9537a83f3882",
     },
@@ -244,7 +244,7 @@ export default {
             this.location = {
               lat: this.latitude,
               lng: this.longitude,
-              name: data.region + " " + data.country
+              name: data.region + ", " + data.country
             }
            })
       }
