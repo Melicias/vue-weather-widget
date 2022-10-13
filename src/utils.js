@@ -82,7 +82,7 @@ const utils = {
 
     apiKey = apiKey || "c3bb8aa0a56b21122dea6a2a8ada70c8";
     const apiType = reversed ? "reverse" : "forward";
-    return fetch(`//api.positionstack.com/v1/${apiType}?access_key=${apiKey}&query=${query}`)
+    return fetch(`http://api.positionstack.com/v1/${apiType}?access_key=${apiKey}&query=${query}`)
       .then((resp) => resp.json())
       .then((result) => {
         if (result.error) {
